@@ -1,0 +1,2 @@
+[alias]
+release-min = "build --profile release-min -Zbuild-std=core,std,alloc,panic_unwind --target x86_64-unknown-linux-musl"

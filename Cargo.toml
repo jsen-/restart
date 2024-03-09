@@ -1,0 +1,21 @@
+[package]
+name = "restart"
+description = "ensures only one instance of a command is running at a time"
+license = "Apache-2.0 OR MIT"
+version = "0.1.0"
+edition = "2021"
+repository = "https://github.com/jsen-/restart"
+
+[profile.release-min]
+inherits = "release"
+strip = true
+lto = "fat"
+panic = "unwind"
+overflow-checks = true
+codegen-units = 1
+incremental = false
+
+[dependencies]
+kill_tree = "0.2.4"
+libc = "0.2.153"
+sysinfo = { version = "0.30.7", default-features = false }
